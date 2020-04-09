@@ -26,7 +26,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: git clone https://github.com/Yu-Xiaoxian/Yu-Xiaoxian.github.io.git
     - run: cd Yu-Xiaoxian.github.io
-    - run: git checkout blog-source
+    - run: git branch blog-source && git checkout blog_source && git pull origin blog-source
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
